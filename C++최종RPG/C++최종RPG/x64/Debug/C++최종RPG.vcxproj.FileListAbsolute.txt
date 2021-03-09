@@ -1,0 +1,2 @@
+E:\비쥬얼스튜디오 c++\현재진행중인문제\C++최종RPG\C++최종RPG\x64\Debug\C++최종RPG.exe
+E:\비쥬얼스튜디오 c++\현재진행중인문제\C++최종RPG\C++최종RPG\x64\Debug\C++최종RPG.pdb
