@@ -5,6 +5,7 @@ GameManager::GameManager()
 	ScreenSizeSetting();
 	m_bGameEndFlag = false;
 	m_bExitDungeonFlag = false;
+	m_bPlayerDeadFlag = false;
 }
 
 void GameManager::PlayGame()
@@ -180,6 +181,12 @@ void GameManager::InDungeonManipulation(int MonsterNumber)
 			if (Monster_Manager.MonsterJowCheck(Player_Manager.GetPlayerLocation()) != false)
 			{
 				BattlePhase(Monster_Manager.MonsterJowCheck(Player_Manager.GetPlayerLocation()));
+				if (m_bPlayerDeadFlag == true)
+				{
+					Monster_Manager.ResetMonsterInDungeon();
+					m_bPlayerDeadFlag = false;
+					return;
+				}
 				Monster_Manager.FieldMonsterDie(Player_Manager.GetPlayerLocation());
 				ReDrawMap();
 				Monster_Manager.ChangeMonsterMakeClock(clock());
@@ -256,8 +263,10 @@ void GameManager::BattlePhase(int MonsterNumber)
 			DontMoveByCoolTime();
 			BattlePhase_MonsterDammage(&Mob, Weapon_Manager.GetEquipWeaponShield());
 			if (Player_Manager.GetHP() <= 0)
-			PlayerDeadByMonster(MemoPlayerOriginalSpeed);
-			
+			{
+				if (PlayerDeadByMonster(MemoPlayerOriginalSpeed) == true)
+					return;
+			}
 		}
 
 
@@ -319,7 +328,8 @@ void GameManager::BattlePhase(int MonsterNumber)
 		}
 
 		//죽은쪽을 기준으로 결과(보상)창출력
-		PlayerDeadByMonster(MemoPlayerOriginalSpeed);
+		if (PlayerDeadByMonster(MemoPlayerOriginalSpeed) == true)
+			return;
 		if (Mob.GetLifeStatus() == LIFESTATUS_eDEAD)
 		{
 			//몬스터 드랍골드
@@ -353,7 +363,7 @@ void GameManager::BattlePhase(int MonsterNumber)
 	}
 }
 
-void GameManager::PlayerDeadByMonster(int MemoPlayerOriginalSpeed)
+bool GameManager::PlayerDeadByMonster(int MemoPlayerOriginalSpeed)
 {
 	if (Player_Manager.GetLifeStatus() == LIFESTATUS_eDEAD)
 	{
@@ -361,8 +371,10 @@ void GameManager::PlayerDeadByMonster(int MemoPlayerOriginalSpeed)
 		YouDied();
 		Player_Manager.LifeStatusChange(LIFESTATUS_eNORMAL);
 		Player_Manager.ChangeAttackSpeedByParalysys(MemoPlayerOriginalSpeed);
-		return;
+		m_bPlayerDeadFlag = true;
+		return true;
 	}
+	return false;
 }
 
 void GameManager::BattleDammageCalculate(Monster* JowMob, int WeaponAtk, int WeaponShield, WeaponSkill WeaponSkillData, Skill UseSKill)
@@ -658,10 +670,11 @@ void GameManager::YouDied()
 {
 	system("cls");
 	Draw_Manager.DrawBorder();
-	Draw_Manager.DrawMidText("YOU DIED", Draw_Manager.GetWidth(), 15);
-	Draw_Manager.DrawMidText("Continue?(press AnyKey)", Draw_Manager.GetWidth(), 16);
-	Draw_Manager.DrawMidText("컨티뉴시 패널티로 경험치획득량 하락 & 체력마나치절반으로 부활", Draw_Manager.GetWidth(), 17);
-	Draw_Manager.DrawPauseByGameScreen(19);
+	Draw_Manager.DrawMidText("YOU DIED", Draw_Manager.GetWidth(), 13);
+	Draw_Manager.DrawMidText("Continue?(press AnyKey)", Draw_Manager.GetWidth(), 15);
+	Draw_Manager.DrawMidText("컨티뉴시 패널티로", Draw_Manager.GetWidth(), 17);
+	Draw_Manager.DrawMidText("경험치획득량 하락 & 체력마나치절반으로 부활", Draw_Manager.GetWidth(), 18);
+	Draw_Manager.DrawPauseByGameScreen(20);
 }
 
 void GameManager::ShowInDungeonMenu()

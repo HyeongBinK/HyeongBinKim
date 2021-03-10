@@ -57,6 +57,7 @@ private:
 	PlayerManager Player_Manager; //플레이어블캐릭터 관리자
 	MonsterManager Monster_Manager; //몬스터관리자
 	WeaponManager Weapon_Manager; //무기관리자
+	bool m_bPlayerDeadFlag; //기본적으론 false 플레이어가 죽으면 트루로변환후 던전밖으로나간후 다시 false 로 변환 
 	bool m_bGameEndFlag; //종료체크플래그
 	bool m_bExitDungeonFlag; //던전탈출체크플래그
 protected:
@@ -85,7 +86,7 @@ public:
 	void BattlePhase_MonsterDammage(Monster* JowMob, int WeaponShield); //몬스터가 플레이어한테주는데미지
 	void BattlePhase_PlayerDammage(Monster* JowMob, int WeaponAtk, WeaponSkill WeaponSkillData, Skill UseSkill); //플레이어가 몬스터에게 주는데미지
 	void ReDrawMap(); //인던전도중 메뉴창다녀왔을시 원래상태로 되돌리는기능
-	void PlayerDeadByMonster(int MemoPlayerOriginalSpeed); //플레이어 피가 0이하가 될시실행(플레이어가 반동턴에 죽을수도있기에 똑같은코드 2번쓰는거 방지용)
+	bool PlayerDeadByMonster(int MemoPlayerOriginalSpeed); //플레이어 피가 0이하가 될시실행(플레이어가 반동턴에 죽을수도있기에 똑같은코드 2번쓰는거 방지용)
 
 	//인터페이스
 	void ShowVictory(int GiveExp, int Gold, int SpecialItem); //몬스터처치시 승리표시
