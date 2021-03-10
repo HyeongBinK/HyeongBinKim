@@ -251,7 +251,7 @@ void PlayerManager::LoadPlayerCharacter(string LoadFileName)
 	if(LoadFileName == "BasePlayerCharacter")
 	Skill_Manager.LoadSkillData("BaseSkillData");
 	else
-		Skill_Manager.LoadSkillData("SkillData");
+	Skill_Manager.LoadSkillData("SkillData");
 }
 
 void PlayerManager::ItemEquip(int WeaponNumber)
