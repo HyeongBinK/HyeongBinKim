@@ -7,16 +7,10 @@ GameManager::GameManager()
 	m_bExitDungeonFlag = false;
 }
 
-void GameManager::GameTest()
-{
-	NewGame();
-	//S_M.ShowSkillPoint(P_M.GetPlayerClass(), P_M.GetSkillPoint());
-	Player_Manager.ShowTotalStatus();
-}
-
 void GameManager::PlayGame()
 {
 	int Select;
+
 	ShowStartMenu();
 	cin >> Select;
 	switch (Select)

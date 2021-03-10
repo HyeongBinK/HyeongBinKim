@@ -63,8 +63,6 @@ protected:
 
 public:
 	GameManager();
-
-	void GameTest(); //작동여부테스트
 	void PlayGame(); //게임시작(새게임, 기존데이터로딩해서 게임하기 등) 모든것의 시작부분
 	
 	//데이터저장로드
