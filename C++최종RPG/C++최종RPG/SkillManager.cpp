@@ -118,26 +118,41 @@ void SkillManager::SkillLevelUp(int SkillNumber)
 	}
 }
 
-void SkillManager::UpGradeSkill(int PlayerClassNumber, int SkillPoint, bool IsSkillPoint)
+void SkillManager::UpGradeSkill(int PlayerClassNumber, int* SkillPoint)
 {
 	int Select;
 	while (1)
 	{
-		ShowAndUpgradeSkill(PlayerClassNumber, SkillPoint);
+		ShowAndUpgradeSkill(PlayerClassNumber, *SkillPoint);
 		cin >> Select;
 		switch (Select)
 		{
 		case SKILLNAME_ePOWERSLASH:
-			if (IsSkillPoint == true)
+			if ((*SkillPoint) > 0)
+			{
 				SkillLevelUp(SKILLNAME_ePOWERSLASH);
+				(*SkillPoint)--;
+			}
+			else
+				SkillPointError();
 			break;
 		case SKILLNAME_eCOMBOASSULT:
-			if (IsSkillPoint == true)
+			if ((*SkillPoint) > 0)
+			{
 				SkillLevelUp(SKILLNAME_eCOMBOASSULT);
+				(*SkillPoint)--;
+			}
+			else
+				SkillPointError();
 			break;
 		case SKILLNAME_eCOMBOEXTINGSION:
-			if (IsSkillPoint == true)
+			if ((*SkillPoint) > 0)
+			{
 				SkillLevelUp(SKILLNAME_eCOMBOEXTINGSION);
+				(*SkillPoint)--;
+			}
+			else
+				SkillPointError();
 			break;
 		case SKILLNAME_eRETURN:
 			return;
@@ -155,6 +170,17 @@ Skill SkillManager::GetSkillAllDataBySkillNumber(int SKillNumber)
 			return *iter;
 		}
 	}
+}
+
+void SkillManager::SkillPointError()
+{
+	system("cls");
+	Draw_Manager.DrawBorder();
+	Draw_Manager.DrawMidText("스킬포인트가 부족해 스킬을 습득할수없습니다.", Draw_Manager.GetWidth(), 15);
+	Draw_Manager.DrawMidText("아직 습득할수없는 스킬입니다.", Draw_Manager.GetWidth(), 16);
+	//Draw_Manager.DrawMidText("아무키나누르면 원래창으로 이동", Draw_Manager.GetWidth(), 18);
+	Draw_Manager.DrawPauseByGameScreen(18);
+	//system("pause");
 }
 
 void SkillManager::ChangeSkillCanBeAcquiredBySkillNumber(int SkillNumber)

@@ -35,7 +35,6 @@ public:
 	void MakePlayerName(string Name); //새로운모험시작시 캐릭터 이름입력
 
 	void LevelUp(); // 레밸업
-	bool Use_SkillPoint(); //스킬포인트 소모
 	void Use_Gold(int Gold); //골드소모
 	bool Use_Mp(int SkillMP); //스킬사용시 마나소모
 	void NeedExp_Change(); //레밸업에따른 경험치요구량변경
@@ -59,7 +58,6 @@ public:
 	void ShowMakeNameMenu(); //이름만들기메뉴
 	void ShowSkillLearnError(); //습득불가능한 스킬을 배울려했을시 표시되는 창
 	void StatPointError(); //스탯포인트 부족시 표시되는 창
-	void SkillPointError(); //스킬포인트부족시 표시되는 창
 	void GoldError(); //골드부족시 표시되는 창
 	void MPError(); //마나부족시 표시되는 창 
 	void LocationChange(int LocationX, int LocationY); //던전입장시 플레이어 좌표 던전중앙으로 이동

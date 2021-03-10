@@ -1,29 +1,12 @@
-﻿  GameManager.cpp
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\drawmanager.h(39): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\monstermanager.h(40): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\gamemanager.cpp(73): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\gamemanager.cpp(138): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\gamemanager.cpp(143): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(459): note: 'kbhit' 선언을 참조하십시오.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\gamemanager.cpp(145): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\gamemanager.cpp(370): warning C4101: 'TrueDammage' :참조되지 않은 지역 변수입니다.
-  MainSource.cpp
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\drawmanager.h(39): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\monstermanager.h(40): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\mainsource.cpp(5): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\mainsource.cpp(6): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  PlayerManager.cpp
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\drawmanager.h(39): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\playermanager.cpp(78): warning C4244: '*=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\playermanager.cpp(174): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  SkillManager.cpp
+d:\깃허브\hyeongbinkim\c++최종rpg\c++최종rpg\drawmanager.h(39): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\깃허브\hyeongbinkim\c++최종rpg\c++최종rpg\skillmanager.cpp(16): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 'strcpy' 선언을 참조하십시오.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\playermanager.cpp(175): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\깃허브\hyeongbinkim\c++최종rpg\c++최종rpg\skillmanager.cpp(17): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\playermanager.cpp(216): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\깃허브\hyeongbinkim\c++최종rpg\c++최종rpg\skillmanager.cpp(48): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 'strcpy' 선언을 참조하십시오.
-c:\users\a05\desktop\hyeongbinkim\c++최종rpg\c++최종rpg\playermanager.cpp(217): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+d:\깃허브\hyeongbinkim\c++최종rpg\c++최종rpg\skillmanager.cpp(49): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
-  코드를 생성하고 있습니다...
-  C++최종RPG.vcxproj -> C:\Users\A05\Desktop\HyeongBinKim\C++최종RPG\C++최종RPG\x64\Debug\C++최종RPG.exe
+d:\깃허브\hyeongbinkim\c++최종rpg\c++최종rpg\skillmanager.cpp(173): warning C4715: 'SkillManager::GetSkillAllDataBySkillNumber': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  C++최종RPG.vcxproj -> D:\깃허브\HyeongBinKim\C++최종RPG\C++최종RPG\x64\Debug\C++최종RPG.exe

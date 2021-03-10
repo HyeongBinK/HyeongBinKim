@@ -28,20 +28,6 @@ void PlayerManager::LevelUp()
 	}
 }
 
-bool PlayerManager::Use_SkillPoint()
-{
-	if (m_iSkillPoint > 0)
-	{
-		m_iSkillPoint--;
-		return true;
-	}
-	else
-	{
-		SkillPointError();
-		return false;
-	}
-}
-
 void PlayerManager::Use_Gold(int Gold)
 {
 	if (m_iOwnedGold >= Gold)
@@ -448,7 +434,7 @@ void PlayerManager::ShowClassChange()
 
 void PlayerManager::UpgradeSkill_PlusPlayerData()
 {
-	Skill_Manager.UpGradeSkill(m_iClassNumber ,m_iSkillPoint, Use_SkillPoint());
+	Skill_Manager.UpGradeSkill(m_iClassNumber ,&m_iSkillPoint);
 }
 
 void PlayerManager::ShowMakeNameMenu()
@@ -485,16 +471,7 @@ void PlayerManager::StatPointError()
 	Draw_Manager.DrawPauseByGameScreen(18);
 	
 }
-void PlayerManager::SkillPointError()
-{
-	system("cls");
-	Draw_Manager.DrawBorder();
-	Draw_Manager.DrawMidText("스킬포인트가 부족해 스킬을 습득할수없습니다.", Draw_Manager.GetWidth(), 15);
-	Draw_Manager.DrawMidText("아직 습득할수없는 스킬입니다.", Draw_Manager.GetWidth(), 16);
-	//Draw_Manager.DrawMidText("아무키나누르면 원래창으로 이동", Draw_Manager.GetWidth(), 18);
-	Draw_Manager.DrawPauseByGameScreen(18);
-	//system("pause");
-}
+
 void PlayerManager::MPError()
 {
 	system("cls");
