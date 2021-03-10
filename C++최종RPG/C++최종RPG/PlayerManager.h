@@ -64,6 +64,7 @@ public:
 	void MPError(); //마나부족시 표시되는 창 
 	void LocationChange(int LocationX, int LocationY); //던전입장시 플레이어 좌표 던전중앙으로 이동
 	void DrawCharacter(); //캐릭터그려주는 함수
+	void ClearSkillData();
 	//void PlayerMoveinDunGeon(char* ch); //던전안에서의 캐릭터움직임
 	
 	inline SkillManager GetSkillData()

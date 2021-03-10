@@ -62,7 +62,7 @@ void GameManager::DataClear()
 	Monster_Manager.ResetMonsterInDungeon();
 	Monster_Manager.EraseMonsterData();
 	Weapon_Manager.ClearWeaponData();
-	Player_Manager.GetSkillData().ClearSkillData();
+	Player_Manager.ClearSkillData();
 }
 
 void GameManager::ScreenSizeSetting()

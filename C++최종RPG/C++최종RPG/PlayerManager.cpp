@@ -248,9 +248,10 @@ void PlayerManager::LoadPlayerCharacter(string LoadFileName)
 		if (str2 == "END")
 			break;
 	}
+	load.close();
 	if(LoadFileName == "BasePlayerCharacter")
 	Skill_Manager.LoadSkillData("BaseSkillData");
-	else
+	else if(LoadFileName ==  "PlayerCharacterData")
 	Skill_Manager.LoadSkillData("SkillData");
 }
 
@@ -284,6 +285,11 @@ void PlayerManager::ShowTotalStatus()
 	Draw_Manager.DrawMidText_PlusTailInt(m_iEquipWeaponNumber, "장착중인무기번호 :", Draw_Manager.GetWidth(), 21);
 	Draw_Manager.DrawPauseByGameScreen(22);
 
+}
+
+void PlayerManager::ClearSkillData()
+{
+	Skill_Manager.ClearSkillData();
 }
 
 string PlayerManager::ClassNumbertoClassName(int ClassNumber)

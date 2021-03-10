@@ -4,6 +4,7 @@ SkillManager::SkillManager()
 {
 }
 
+
 void SkillManager::SaveSkillData(string SaveFileName)
 {
 	ofstream save;
@@ -20,15 +21,17 @@ void SkillManager::SaveSkillData(string SaveFileName)
 		for (auto iter = Skills.begin(); iter != Skills.end(); iter++)
 		{
 			iter->SaveSkillData(save);
-			if (iter == Skills.end())
+			if (iter == Skills.end()-1)
+			{
 				save << "END";
+				break;
+			}
 			else
 				save << "NEXT" << endl;
 		}
-
 		save.close();
 	}
-
+	//save.close();
 }
 
 void SkillManager::LoadSkillData(string LoadFileName)
@@ -59,6 +62,7 @@ void SkillManager::LoadSkillData(string LoadFileName)
 				break;
 		}
 	}
+	//load.close();
 }
 
 //void SkillManager::SetSkillData(int SkillNumber)

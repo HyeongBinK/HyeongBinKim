@@ -20,15 +20,17 @@ void WeaponManager::SaveWeaponsData(string SaveFileName)
 		for (auto iter = WeaPons.begin(); iter != WeaPons.end(); iter++)
 		{
 			(*iter)->SaveWeaponData(save);
-			if(iter == WeaPons.end())
+			if (iter == WeaPons.end()-1)
+			{
 				save << "END";
+				break;
+			}
 			else
 			save << "NEXT" << endl;
 		}
-
 		save.close();
 	}
-	
+	//save.close();
 }
 
 void WeaponManager::LoadWeaponsData(string LoadFileName)
@@ -67,6 +69,7 @@ void WeaponManager::LoadWeaponsData(string LoadFileName)
 				break;
 		}
 	}
+	//load.close();
 }
 
 void WeaponManager::WeaponGet(int WeaponNumber)
