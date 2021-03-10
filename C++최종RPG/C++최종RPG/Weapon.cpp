@@ -28,6 +28,7 @@ void Weapon::SaveWeaponData(ofstream& save)
 	save << m_strWeaponType << " ";
 	save << m_strWeaponName << " ";
 	save << m_strIntroduce << " ";
+	save << m_ClassUniqueSkill.GetWeaponSkillName() << " ";
 	save << m_iWeaponGrade << " ";
 	save << m_iWeaponNumber << " ";
 	save << m_iEquipLevel << " ";
@@ -38,7 +39,6 @@ void Weapon::SaveWeaponData(ofstream& save)
 	save << m_iWeaponPride << " ";
 	save << m_bGotFlag << " ";
 	save << m_ClassUniqueSkill.GetIsWeaponSkill() << " ";
-	save << m_ClassUniqueSkill.GetWeaponSkillName() << " ";
 	save << m_ClassUniqueSkill.GetWeaponIntrinsicEffect() << " ";
 }
 

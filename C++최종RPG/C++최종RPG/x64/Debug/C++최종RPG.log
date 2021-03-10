@@ -1,11 +1,2 @@
-﻿  GameManager.cpp
-C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\DrawManager.h(39,17): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\DrawManager.h(39,20): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
-C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\MonsterManager.h(41,1): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\GameManager.cpp(73,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\GameManager.cpp(138,89): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\GameManager.cpp(138,56): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\GameManager.cpp(143,7): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _kbhit. See online help for details.
-C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\GameManager.cpp(145,9): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
-C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\GameManager.cpp(370,6): warning C4101: 'TrueDammage' :참조되지 않은 지역 변수입니다.
-  C++최종RPG.vcxproj -> C:\Users\admin\Documents\GitHub\HyeongBinKim\C++최종RPG\C++최종RPG\x64\Debug\C++최종RPG.exe
+﻿  Weapon.cpp
+  C++최종RPG.vcxproj -> C:\Users\A05\Desktop\HyeongBinKim\C++최종RPG\C++최종RPG\x64\Debug\C++최종RPG.exe

@@ -5,8 +5,7 @@
 
 #define FIELDMAXMONSTER 10 //필드내 몬스터재한숫자
 #define MAXBOSSGAGE 5 //보스소환게이지
-#define NORMAL_MONSTER_MAKE_COOLTIME 1000
-//보스몹은 한마리만
+#define NORMAL_MONSTER_MAKE_COOLTIME 1000 //몬스터생성쿨타임
 
 class MonsterManager 
 {

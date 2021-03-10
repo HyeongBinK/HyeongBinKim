@@ -9,7 +9,7 @@ private :
 	int m_iWidth;
 	int m_iHeight;
 public:
-	void BoxDraw(int Start_x, int Start_y, int Width, int Height);
+	//void BoxDraw(int Start_x, int Start_y, int Width, int Height);
 	void DrawPoint(string str, int x, int y);
 	void DrawMidText(string str, int x, int y);
 	void DrawMidText_TwoString(string str1, string str2, int x, int y);
