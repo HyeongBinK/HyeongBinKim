@@ -5,6 +5,8 @@
 #include"MonsterManager.h"
 #include"WeaponManager.h"
 
+#define SAVELOADSLOTMAX 10
+
 enum OUTDUNGEON
 {
 	OUTDUNGEON_eGOBSHOME =1,
@@ -68,9 +70,13 @@ public:
 	
 	//데이터저장로드
 	void NewGame(); // 새로운게임시작(초기데이터로딩) 
-	void SaveGame(); //게임저장
-	void LoadGame(); //게임로드하기
+	void SaveGame(int i); //게임저장
+	void LoadGame(int i); //게임로드하기
 	void DataClear(); //게임중간로드시 기존데이터 클리어
+	
+	//세이브와 로드 슬롯
+	void SaveSlot(); //세이브슬롯창뛰우고 골라서 세이브(만들어지지않았을시엔 만들어지고 세이브)(파일이있다면 덮어쓰기)
+	bool LoadSlot(); //로드슬롯창뛰우고 골라서 해당파일 로드(해당파일이없다면 로드불가)
 
 	//던전밖(마을상태)
 	void GameManipulation(); //전체적인 게임진행(아래 항목들이 들어감)
@@ -98,7 +104,7 @@ public:
 	//void ShowWeaponTraderMenu(); //무기상점메뉴 창
 	//void ShowWeaponNameAndPride(int WeaponNumber, int Line); //무기상점내 무기가격과 무기이름 줄
 	void ShowSaveAndLoadComplete(); //세이브로드시 완료 표시창
-
+	void ShowInDungeonKeyRule(); //인던전내 조작키설명
 	//void UpgradeSkill(); //스킬쪽에있는게맞는거같으나 유저쪽 스킬포인트정보를 가져와야되기에 이클래스에 위치
 	//void ChangeWeaponMenu(); //무기쪽에있는게바람직하나 유저의 장착중인 무기정보를 변경해야하기에 해당 클래스에 위치시킴
 	void ChangeWeapon(int WeaponNumber); //장착무기변경

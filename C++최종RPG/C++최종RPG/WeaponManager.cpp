@@ -7,14 +7,9 @@ WeaponManager::WeaponManager()
 void WeaponManager::SaveWeaponsData(string SaveFileName)
 {
 	ofstream save;
+	string FileName = SaveFileName+".txt";
 
-	char buf[30];
-	char cstr[20];
-	char str[20] = ".txt";
-
-	strcpy(cstr, SaveFileName.c_str());
-	sprintf(buf, "%s%s", cstr, str);
-	save.open(buf);
+	save.open(FileName);
 	if (save.is_open())
 	{
 		for (auto iter = WeaPons.begin(); iter != WeaPons.end(); iter++)
@@ -41,14 +36,11 @@ void WeaponManager::LoadWeaponsData(string LoadFileName)
 	int Grade, WeaponNumberint, EquipLevel, Atk, Sheild, Gold, IntrinsicEffect;
 	bool GetFlag, IsWeaponSkillFlag;
 	string str2;
+	string FileName;
 	ifstream load;
-	char buf[30];
-	char str[20] = ".txt";
-	char cstr[20];
-	strcpy(cstr, LoadFileName.c_str());
-	sprintf(buf, "%s%s", cstr, str);
-
-	load.open(buf);
+	
+	FileName = LoadFileName + ".txt";
+	load.open(FileName);
 	while (!load.eof())
 	{
 		

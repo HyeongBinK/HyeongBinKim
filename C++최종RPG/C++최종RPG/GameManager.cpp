@@ -11,30 +11,36 @@ GameManager::GameManager()
 void GameManager::PlayGame()
 {
 	int Select;
-
-	ShowStartMenu();
-	cin >> Select;
-	switch (Select)
+	while (1)
 	{
-	case 1:
-		NewGame();
-		GameManipulation();
-		break;
-	case 2:
-		LoadGame();
-		GameManipulation();
-		break;
-	case 3:
-		return;
-	default:
-		break;
+		m_bGameEndFlag = false;
+
+		ShowStartMenu();
+		cin >> Select;
+		switch (Select)
+		{
+		case 1:
+			NewGame();
+			GameManipulation();
+			break;
+		case 2:
+			if (LoadSlot() == true)
+				GameManipulation();
+			else 
+				break;
+			break;
+		case 3:
+			return;
+		default:
+			break;
+		}
 	}
 }
 
 void GameManager::NewGame()
 {
 	string Name;
-	Player_Manager.LoadPlayerCharacter("BasePlayerCharacter");
+	Player_Manager.LoadPlayerCharacter("BasePlayerCharacter", 0);
 	Weapon_Manager.LoadWeaponsData("BaseWeaponData");
 	Monster_Manager.LoadMonsterData("BaseMonsterData");
 	Player_Manager.ShowMakeNameMenu();
@@ -42,18 +48,22 @@ void GameManager::NewGame()
 	Player_Manager.MakePlayerName(Name);
 }
 
-void GameManager::SaveGame()
+void GameManager::SaveGame(int i)
 {
-	Player_Manager.SavePlayerCharacter("PlayerCharacterData");
-	Weapon_Manager.SaveWeaponsData("WeaponData");
+	Player_Manager.SavePlayerCharacter("PlayerCharacterData" , i);
+	Weapon_Manager.SaveWeaponsData("WeaponData"+ to_string(i));
+	//Player_Manager.SavePlayerCharacter("PlayerCharacterData");
+	//Weapon_Manager.SaveWeaponsData("WeaponData");
 	ShowSaveAndLoadComplete();
 }
 
-void GameManager::LoadGame()
+void GameManager::LoadGame(int i)
 {
 	DataClear();
-	Player_Manager.LoadPlayerCharacter("PlayerCharacterData");
-	Weapon_Manager.LoadWeaponsData("WeaponData");
+	Player_Manager.LoadPlayerCharacter("PlayerCharacterData" , i);
+	Weapon_Manager.LoadWeaponsData("WeaponData" + to_string(i));
+	/*Player_Manager.LoadPlayerCharacter("PlayerCharacterData");
+	Weapon_Manager.LoadWeaponsData("WeaponData");*/
 	Monster_Manager.LoadMonsterData("BaseMonsterData");
 	ShowSaveAndLoadComplete();
 }
@@ -64,6 +74,123 @@ void GameManager::DataClear()
 	Monster_Manager.EraseMonsterData();
 	Weapon_Manager.ClearWeaponData();
 	Player_Manager.ClearSkillData();
+}
+
+void GameManager::SaveSlot()
+{
+	string PlayerDataName = "PlayerCharacterData";
+	string WeaponDataName = "WeaponData";
+	string FileName;
+	string Tail = ".txt";
+	char FileNametoChar[30];
+	int FileSlotNumber;
+	int Select;
+	FILE* f;
+
+	//ifstream load;
+	while (1)
+	{
+		system("cls");
+		Draw_Manager.DrawBorder();
+		Draw_Manager.DrawMidText("=====Save=====", Draw_Manager.GetWidth(), 10);
+		//printf("=====Save=====\n");
+		for (FileSlotNumber = 1; FileSlotNumber <= SAVELOADSLOTMAX; FileSlotNumber++)
+		{
+			char ch;
+			FileName = PlayerDataName + to_string(FileSlotNumber)+ Tail;
+			strcpy(FileNametoChar, FileName.c_str());
+			f = fopen(FileNametoChar, "r");
+			if (f == NULL)
+				ch = 'x';
+			else
+				ch = 'o';
+			//printf("%d번슬롯 : <파일여부 : %c>\n", i, ch);
+			//cout << i << "번슬롯 : <파일여부 :" + ch + '>' << endl;
+			Draw_Manager.DrawMidText(to_string(FileSlotNumber) + "번슬롯 : <파일여부 :" + ch + '>', Draw_Manager.GetWidth(), 10 + FileSlotNumber);
+		}
+		Draw_Manager.DrawMidText(to_string(FileSlotNumber) + "되돌아가기", Draw_Manager.GetWidth(), 10 + FileSlotNumber);
+		Draw_Manager.DrawMidText("선택 : ", Draw_Manager.GetWidth(), 10 + FileSlotNumber + 2);
+		cin >> Select;
+		if (Select == FileSlotNumber)
+			return;
+		else if (Select > FileSlotNumber || Select < 1)
+		{
+			system("cls");
+			Draw_Manager.DrawBorder();
+			Draw_Manager.DrawMidText("1~10사이의 슬롯에만 저장로드하세요!", Draw_Manager.GetWidth(), 15);
+		}
+		else if (Select >= 1 && Select <= SAVELOADSLOTMAX)
+		{
+			SaveGame(Select);
+			return;
+		}
+	}
+}
+
+bool GameManager::LoadSlot()
+{
+	string PlayerDataName = "PlayerCharacterData";
+	//string WeaponDataName = "WeaponData";
+	string FileName;
+	string Tail = ".txt";
+	char FileNametoChar[30];
+	int FileSlotNumber;
+	int Select;
+	bool LoadStateFlag = false;
+	FILE* f;
+
+	//ifstream load;
+	while (1)
+	{
+		system("cls");
+		Draw_Manager.DrawBorder();
+
+		Draw_Manager.DrawMidText("=====Load=====", Draw_Manager.GetWidth(), 10);
+		for (FileSlotNumber = 1; FileSlotNumber <= SAVELOADSLOTMAX; FileSlotNumber++)
+		{
+			char ch;
+			FileName = PlayerDataName + to_string(FileSlotNumber)+ Tail;
+			strcpy(FileNametoChar, FileName.c_str());
+			f = fopen(FileNametoChar, "r");
+			if (f == NULL)
+				ch = 'x';
+			else
+				ch = 'o';
+			Draw_Manager.DrawMidText(to_string(FileSlotNumber) + "번슬롯 : <파일여부 :" + ch + '>', Draw_Manager.GetWidth(), 10 + FileSlotNumber);
+		}
+		Draw_Manager.DrawMidText(to_string(FileSlotNumber) + "되돌아가기", Draw_Manager.GetWidth(), 10 + FileSlotNumber);
+		Draw_Manager.DrawMidText("선택 : ", Draw_Manager.GetWidth(), 10 + FileSlotNumber + 2);
+		cin >> Select;
+		if (Select == FileSlotNumber)
+			break;
+		else if (Select > FileSlotNumber || Select < 1)
+		{
+			system("cls");
+			Draw_Manager.DrawBorder();
+			Draw_Manager.DrawMidText("1~10사이의 슬롯에만 저장로드하세요!", Draw_Manager.GetWidth(), 15);
+		}
+		else if (Select >= 1 && Select <= SAVELOADSLOTMAX)
+		{
+			FileName = PlayerDataName + to_string(Select) + Tail;
+			strcpy(FileNametoChar, FileName.c_str());
+			f = fopen(FileNametoChar, "r");
+			if (f == NULL)
+			{
+				system("cls");
+				Draw_Manager.DrawBorder();
+				Draw_Manager.DrawMidText("해당슬롯엔 세이브파일이없습니다", Draw_Manager.GetWidth(), 15);
+				Draw_Manager.DrawPauseByGameScreen(16);
+			}
+			else
+			{
+				DataClear();
+				LoadGame(Select);
+				LoadStateFlag = true;
+				break;
+			}
+		}
+	}
+	return LoadStateFlag;
 }
 
 void GameManager::ScreenSizeSetting()
@@ -115,11 +242,11 @@ void GameManager::OutDungeonManipulation()
 			CharacterMenuManipulation();
 			break;
 		case OUTDUNGEON_eGAMESAVE :
-			SaveGame();
+			SaveSlot();
 			break;
 		case OUTDUNGEON_eGAMELOAD :
-			LoadGame();
-			break;
+			LoadSlot();
+			return;
 		case OUTDUNGEON_eENDGAME :
 			m_bGameEndFlag = true;
 			return;
@@ -135,6 +262,7 @@ void GameManager::InDungeonManipulation(int MonsterNumber)
 	char ch = NULL;
 	system("cls");
 	Draw_Manager.DrawBorder();
+	ShowInDungeonKeyRule();
 	Monster_Manager.ChangeMonsterMakeClock(clock());
 	Player_Manager.LocationChange(Draw_Manager.GetWidth() * 0.5f, Draw_Manager.GetHeight() * 0.5f);
 	Player_Manager.DrawCharacter();
@@ -223,6 +351,7 @@ void GameManager::ReDrawMap()
 {
 	system("cls");
 	Draw_Manager.DrawBorder();
+	ShowInDungeonKeyRule();
 	Player_Manager.DrawCharacter();
 	Monster_Manager.DrawMonster();
 }
@@ -724,6 +853,13 @@ void GameManager::ShowSaveAndLoadComplete()
 	//Draw_Manager.DrawMidText("아무키나누르면 원래창으로 이동", Draw_Manager.GetWidth(), 18);
 	cout << endl;
 	Draw_Manager.DrawPauseByGameScreen(18);
+}
+
+void GameManager::ShowInDungeonKeyRule()
+{
+	Draw_Manager.DrawMidText("Enter Key를 눌러 메뉴창으로이동", Draw_Manager.GetWidth(), Draw_Manager.GetHeight()+1);
+	Draw_Manager.DrawMidText("키도드방향키 : 캐릭터이동", Draw_Manager.GetWidth(), Draw_Manager.GetHeight() + 2);
+	Draw_Manager.DrawMidText("ESC : 게임종료(맨처음창으로)", Draw_Manager.GetWidth(), Draw_Manager.GetHeight() + 3);
 }
 
 void GameManager::DontMoveByCoolTime()

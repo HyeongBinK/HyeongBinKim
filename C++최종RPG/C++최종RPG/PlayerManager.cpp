@@ -149,17 +149,17 @@ void PlayerManager::DrawCharacter()
 	Draw_Manager.DrawPoint(m_strCharacterImage, Location.m_iX_Location, Location.m_iY_Location);
 }
 
-void PlayerManager::SavePlayerCharacter(string SaveFileName)
+void PlayerManager::SavePlayerCharacter(string SaveFileName, int i)
 {
 	ofstream save;
+	string FileName;
+	char cstr[50];
+	string Tail = ".txt";
 
-	char buf[30];
-	char cstr[20];
-	char str[20] = ".txt";
+	FileName = SaveFileName + to_string(i) + Tail;
 
-	strcpy(cstr, SaveFileName.c_str());
-	sprintf(buf, "%s%s", cstr, str);
-	save.open(buf);
+	strcpy(cstr, FileName.c_str());
+	save.open(cstr);
 	if (save.is_open())
 	{
 		save << m_strCharacterImage << endl;
@@ -189,21 +189,26 @@ void PlayerManager::SavePlayerCharacter(string SaveFileName)
 		save << "END" << endl;
 		save.close();
 	}
-	Skill_Manager.SaveSkillData("SkillData");
+	FileName = "SkillData" + to_string(i);
+	Skill_Manager.SaveSkillData(FileName);
+	return;
 }
 
-void PlayerManager::LoadPlayerCharacter(string LoadFileName)
+void PlayerManager::LoadPlayerCharacter(string LoadFileName, int i)
 {
 	ifstream load;
 	char buf[30];
-	char str[20] = ".txt";
+	string Tail = ".txt";
 	char cstr[20];
 	string str2;
-	strcpy(cstr, LoadFileName.c_str());
-	sprintf(buf, "%s%s", cstr, str);
+	string FileName;
+	
+	if (i != 0)
+		FileName = LoadFileName + to_string(i) + Tail;
+	else
+		FileName = LoadFileName + Tail;
 
-	load.open(buf);
-
+	load.open(FileName);
 	while (!load.eof())
 	{
 		load >> m_strCharacterImage;
@@ -237,8 +242,11 @@ void PlayerManager::LoadPlayerCharacter(string LoadFileName)
 	load.close();
 	if(LoadFileName == "BasePlayerCharacter")
 	Skill_Manager.LoadSkillData("BaseSkillData");
-	else if(LoadFileName ==  "PlayerCharacterData")
-	Skill_Manager.LoadSkillData("SkillData");
+	else if (LoadFileName == "PlayerCharacterData" + to_string(i))
+	{
+		FileName = "SkillData" + to_string(i);
+		Skill_Manager.LoadSkillData(FileName);
+	}
 }
 
 void PlayerManager::ItemEquip(int WeaponNumber)

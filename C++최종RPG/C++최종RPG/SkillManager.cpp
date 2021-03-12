@@ -11,11 +11,10 @@ void SkillManager::SaveSkillData(string SaveFileName)
 
 	char buf[30];
 	char cstr[20];
-	char str[20] = ".txt";
-
-	strcpy(cstr, SaveFileName.c_str());
-	sprintf(buf, "%s%s", cstr, str);
-	save.open(buf);
+	string Tail = ".txt";
+	string FileName;
+	FileName = SaveFileName + Tail;
+	save.open(FileName);
 	if (save.is_open())
 	{
 		for (auto iter = Skills.begin(); iter != Skills.end(); iter++)
@@ -42,14 +41,10 @@ void SkillManager::LoadSkillData(string LoadFileName)
 	bool CanBeAcquired;
 	string str2;
 	ifstream load;
-	char buf[30];
-	char str[20] = ".txt";
-	char cstr[20];
-	strcpy(cstr, LoadFileName.c_str());
-	sprintf(buf, "%s%s", cstr, str);
-
-	load.open(buf);
-
+	string Tail = ".txt";
+	string FileName;
+	FileName = LoadFileName + Tail;
+	load.open(FileName);
 	while (!load.eof())
 	{
 		load >> SkillName >> SkillNumber >> SkillLevel >> SkillDammagePerCent >> SkillCoolTime >> SkillSpecialEffect >> SkillMPCost >> CanBeAcquired;

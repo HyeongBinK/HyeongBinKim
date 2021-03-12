@@ -47,8 +47,8 @@ public:
 	void UpgradeSkill_PlusPlayerData(); //스킬레밸업
 	// void ChangeMapSize(int Width, int Height); //맵사이즈변경
 	
-	void SavePlayerCharacter(string SaveFileName); //플레이어데이터저장
-	void LoadPlayerCharacter(string LoadFileName); //플레이어데이터불러오기
+	void SavePlayerCharacter(string SaveFileName, int i); //플레이어데이터저장
+	void LoadPlayerCharacter(string LoadFileName, int i); //플레이어데이터불러오기
 	
 	//인터페이스
 	void ShowTotalStatus(); //종합스테이터스정보창
