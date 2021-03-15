@@ -242,7 +242,7 @@ void PlayerManager::LoadPlayerCharacter(string LoadFileName, int i)
 	load.close();
 	if(LoadFileName == "BasePlayerCharacter")
 	Skill_Manager.LoadSkillData("BaseSkillData");
-	else if (LoadFileName == "PlayerCharacterData" + to_string(i))
+	else if (LoadFileName == "PlayerCharacterData")
 	{
 		FileName = "SkillData" + to_string(i);
 		Skill_Manager.LoadSkillData(FileName);

@@ -858,7 +858,7 @@ void GameManager::ShowSaveAndLoadComplete()
 void GameManager::ShowInDungeonKeyRule()
 {
 	Draw_Manager.DrawMidText("Enter Key를 눌러 메뉴창으로이동", Draw_Manager.GetWidth(), Draw_Manager.GetHeight()+1);
-	Draw_Manager.DrawMidText("키도드방향키 : 캐릭터이동", Draw_Manager.GetWidth(), Draw_Manager.GetHeight() + 2);
+	Draw_Manager.DrawMidText("키보드방향키 : 캐릭터이동", Draw_Manager.GetWidth(), Draw_Manager.GetHeight() + 2);
 	Draw_Manager.DrawMidText("ESC : 게임종료(맨처음창으로)", Draw_Manager.GetWidth(), Draw_Manager.GetHeight() + 3);
 }
 
