@@ -1,0 +1,53 @@
+﻿  WeaponManager.cpp
+d:\비쥬얼스튜디오 c++\현재진행중인문제\c++최종rpg\c++최종rpg\drawmanager.h(39): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+d:\비쥬얼스튜디오 c++\현재진행중인문제\c++최종rpg\c++최종rpg\weaponmanager.cpp(15): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 'strcpy' 선언을 참조하십시오.
+d:\비쥬얼스튜디오 c++\현재진행중인문제\c++최종rpg\c++최종rpg\weaponmanager.cpp(16): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+d:\비쥬얼스튜디오 c++\현재진행중인문제\c++최종rpg\c++최종rpg\weaponmanager.cpp(46): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\string.h(133): note: 'strcpy' 선언을 참조하십시오.
+d:\비쥬얼스튜디오 c++\현재진행중인문제\c++최종rpg\c++최종rpg\weaponmanager.cpp(47): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0(879): error C2259: 'Weapon': 추상 클래스를 인스턴스화할 수 없습니다.
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0(879): note: 다음 멤버가 원인입니다.
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xmemory0(879): note: 'std::string Weapon::WeaponNamePlusWeaponType(void)': abstract입니다.
+  d:\비쥬얼스튜디오 c++\현재진행중인문제\c++최종rpg\c++최종rpg\weapon.h(42): note: 'Weapon::WeaponNamePlusWeaponType' 선언을 참조하십시오.
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector(900): note: 컴파일 중인 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const _Ty&>(_Alloc &,_Objty *const ,const _Ty &)'에 대한 참조를 확인하십시오.
+          with
+          [
+              _Alloc=std::allocator<Weapon>,
+              _Ty=Weapon,
+              _Objty=Weapon
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector(902): note: 컴파일 중인 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const _Ty&>(_Alloc &,_Objty *const ,const _Ty &)'에 대한 참조를 확인하십시오.
+          with
+          [
+              _Alloc=std::allocator<Weapon>,
+              _Ty=Weapon,
+              _Objty=Weapon
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector(916): note: 컴파일 중인 함수 템플릿 인스턴스화 'void std::vector<Weapon,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<const _Ty&>(const _Ty &)'에 대한 참조를 확인하십시오.
+          with
+          [
+              _Ty=Weapon
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector(932): note: 컴파일 중인 함수 템플릿 인스턴스화 'void std::vector<Weapon,std::allocator<_Ty>>::emplace_back<const _Ty&>(const _Ty &)'에 대한 참조를 확인하십시오.
+          with
+          [
+              _Ty=Weapon
+          ]
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector(931): note: 클래스 템플릿 멤버 함수 'void std::vector<Weapon,std::allocator<_Ty>>::push_back(const _Ty &)'을(를) 컴파일하고 있습니다.
+          with
+          [
+              _Ty=Weapon
+          ]
+  d:\비쥬얼스튜디오 c++\현재진행중인문제\c++최종rpg\c++최종rpg\weaponmanager.cpp(76): note: 컴파일 중인 함수 템플릿 인스턴스화 'void std::vector<Weapon,std::allocator<_Ty>>::push_back(const _Ty &)'에 대한 참조를 확인하십시오.
+          with
+          [
+              _Ty=Weapon
+          ]
+  d:\비쥬얼스튜디오 c++\현재진행중인문제\c++최종rpg\c++최종rpg\weaponmanager.h(26): note: 컴파일 중인 클래스 템플릿 인스턴스화 'std::vector<Weapon,std::allocator<_Ty>>'에 대한 참조를 확인하세요.
+          with
+          [
+              _Ty=Weapon
+          ]
