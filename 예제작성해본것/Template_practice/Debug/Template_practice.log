@@ -1,0 +1,3 @@
+﻿  MainSource.cpp
+c:\users\a05\source\repos\template_practice\template_practice\mainsource.cpp(85): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  Template_practice.vcxproj -> C:\Users\A05\source\repos\Template_practice\Debug\Template_practice.exe

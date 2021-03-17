@@ -1,0 +1,6 @@
+﻿  MainSource.cpp
+c:\users\a05\desktop\hyeongbinkim\제출\오버로딩부분퀴즈\overloadingquiz\mainsource.cpp(6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  Quiz1.cpp
+  Time.cpp
+  코드를 생성하고 있습니다...
+  OverLoadingQuiz.vcxproj -> C:\Users\A05\Desktop\HyeongBinKim\제출\오버로딩부분퀴즈\OverLoadingQuiz\x64\Debug\OverLoadingQuiz.exe
