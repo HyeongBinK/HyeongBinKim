@@ -1,0 +1,7 @@
+﻿  소스.cpp
+c:\users\a05\desktop\hyeongbinkim\stack push&pop연습\소스.cpp(46): warning C4305: '인수': 'double'에서 'T'(으)로 잘립니다.
+          with
+          [
+              T=float
+          ]
+  ConsoleApplication65.vcxproj -> C:\Users\A05\Desktop\HyeongBinKim\Stack Push&Pop연습\Debug\ConsoleApplication65.exe
