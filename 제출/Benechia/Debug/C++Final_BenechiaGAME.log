@@ -1,0 +1,8 @@
+﻿  DrawManager.cpp
+c:\users\a05\desktop\현재진행중인문제\benechia\drawmanager.h(25): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\a05\desktop\현재진행중인문제\benechia\drawmanager.cpp(6): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(1774): note: 'sprintf' 선언을 참조하십시오.
+c:\users\a05\desktop\현재진행중인문제\benechia\drawmanager.cpp(28): warning C4018: '>': signed 또는 unsigned가 일치하지 않습니다.
+c:\users\a05\desktop\현재진행중인문제\benechia\drawmanager.cpp(99): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 'getch' 선언을 참조하십시오.
+  C++Final_BenechiaGAME.vcxproj -> C:\Users\A05\Desktop\현재진행중인문제\Benechia\Debug\C++Final_BenechiaGAME.exe

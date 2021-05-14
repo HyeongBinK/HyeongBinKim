@@ -1,0 +1,7 @@
+black 990 2 
+white 0 2 
+cow 920 9 
+s 0 1 
+adssadaasd 0 1 
+black 880 3 
+fa 400 1 
